@@ -2763,7 +2763,9 @@ wDudeNumBalls:: db
 wDudeBalls:: ds 2 * 4 + 1
 ENDU
 
-	ds 4
+wOtherTrainerType:: db
+wTrainerGroupBank:: db
+	ds 2
 
 wd430:: ; mobile
 wBattleAction:: db
@@ -3121,8 +3123,24 @@ wWiltonFightCount::  db
 wKenjiFightCount::   db ; unreferenced
 wParryFightCount::   db
 wErinFightCount::    db
+wBugsyFightCount::   db
+wFalknerFightCount:: db
+wWhitneyFightCount:: db
+wMortyFightCount::   db
+wChuckFightCount::   db
+wJasmineFightCount:: db
+wPryceFightCount::   db
+wClairFightCount::   db
+wBrockFightCount::   db
+wMistyFightCount::   db
+wLtSurgeFightCount:: db
+wErikaFightCount::   db
+wJanineFightCount::  db
+wSabrinaFightCount:: db
+wBlaineFightCount::  db
+wBlueFightCount::    db
 
-	ds 100
+	ds 84
 
 wEventFlags:: flag_array NUM_EVENTS
 
@@ -3181,8 +3199,10 @@ wMomItemTriggerBalance:: ds 3
 wDailyResetTimer:: dw
 wDailyFlags1:: db
 wDailyFlags2:: db
+wDailyFlags3:: db
+wDailyFlags4:: db
 wSwarmFlags:: db
-	ds 2
+	ds 0
 wTimerEventStartDay:: db
 	ds 3
 
