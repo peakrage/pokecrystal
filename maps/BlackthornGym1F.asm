@@ -41,6 +41,7 @@ BlackthornGymClairScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CLAIR
+	clearflag ENGINE_CLAIR_REMATCH_FIGHT
 	opentext
 	writetext ClairText_GoToDragonsDen
 	waitbutton
@@ -85,7 +86,101 @@ BlackthornGymClairScript:
 	end
 
 .GotTM24:
+	checkflag ENGINE_CLAIR_REMATCH_FIGHT
+	iftrue .PostRematch
+	checkevent EVENT_BEAT_CHAMPION_LANCE
+	iffalse .PostInitialFight
+	readvar VAR_WEEKDAY	
+	ifnotequal FRIDAY, .PostInitialFight
+	checktime NITE
+	iffalse .PostInitialFight
+	writetext ClairText_AskRematch
+	yesorno
+	iftrue .ClairRematch
+	writetext ClairText_RematchDeclined
+	waitbutton
+	closetext
+	end
+.PostInitialFight:
 	writetext BlackthornGymClairText_League
+	waitbutton
+	closetext
+	end
+
+.ClairRematch
+	writetext ClairText_RematchAccepted
+	waitbutton
+	winlosstext ClairText_RematchDefeat, 0
+	readmem wClairFightCount
+	ifequal 5, .LoadFight5
+	ifequal 4, .LoadFight4
+	ifequal 3, .LoadFight3
+	ifequal 2, .LoadFight2
+	ifequal 1, .LoadFight1
+
+.LoadFight1:
+	loadtrainer CLAIR, CLAIR2
+	startbattle
+	reloadmapafterbattle
+	loadmem wClairFightCount, 2
+	setflag ENGINE_CLAIR_REMATCH_FIGHT
+	opentext
+	writetext ClairText_WayToGo
+	waitbutton
+	closetext
+	end
+
+.LoadFight2:
+	loadtrainer CLAIR, CLAIR3
+	startbattle
+	reloadmapafterbattle
+	loadmem wClairFightCount, 3
+	setflag ENGINE_CLAIR_REMATCH_FIGHT
+	opentext
+	writetext ClairText_WayToGo
+	waitbutton
+	closetext
+	end
+
+.LoadFight3:
+	loadtrainer CLAIR, CLAIR4
+	startbattle
+	reloadmapafterbattle
+	loadmem wClairFightCount, 4
+	setflag ENGINE_CLAIR_REMATCH_FIGHT
+	opentext
+	writetext ClairText_WayToGo
+	waitbutton
+	closetext
+	end
+
+.LoadFight4:
+	loadtrainer CLAIR, CLAIR5
+	startbattle
+	reloadmapafterbattle
+	loadmem wClairFightCount, 5
+	setflag ENGINE_CLAIR_REMATCH_FIGHT
+	opentext
+	writetext ClairText_WayToGo
+	waitbutton
+	closetext
+	end
+
+.LoadFight5:
+	checkevent EVENT_OPENED_MT_SILVER
+	iffalse .LoadFight4
+	loadtrainer CLAIR, CLAIR6
+	startbattle
+	reloadmapafterbattle
+	setflag ENGINE_CLAIR_REMATCH_FIGHT
+	opentext
+	writetext ClairText_WayToGo
+	waitbutton
+	closetext
+	end
+
+.PostRematch:
+	writetext ClairText_WayToGo
 	waitbutton
 	closetext
 	end
@@ -281,6 +376,43 @@ BlackthornGymClairText_League:
 
 	para "Give it every-"
 	line "thing you've got."
+	done
+
+ClairText_AskRematch:
+	text "Nice to see you."
+
+	para "You came at the"
+	line "right time!"
+
+	para "You want to battle"
+	line "again?"
+
+	para "I'm up for it."
+	done
+
+ClairText_RematchAccepted:
+	text "It's great that"
+	line "you're stepping up."
+
+	para "Now let's battle!"
+	done
+
+ClairText_RematchDeclined:
+	text "What in the world?"
+
+	para "Are you trying to"
+	line "make fun of me?!"
+	done
+
+ClairText_RematchDefeat:
+	text "Oh, I see…"
+	done
+
+ClairText_WayToGo:
+	text "Way to go…"
+
+	para "Now give it your"
+	line "all!"
 	done
 
 CooltrainermPaulSeenText:

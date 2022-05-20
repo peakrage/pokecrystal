@@ -22,6 +22,7 @@ PewterGymBrockScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BROCK
 	setevent EVENT_BEAT_CAMPER_JERRY
+	clearflag ENGINE_BROCK_REMATCH_FIGHT
 	opentext
 	writetext ReceivedBoulderBadgeText
 	playsound SFX_GET_BADGE
@@ -33,7 +34,86 @@ PewterGymBrockScript:
 	end
 
 .FightDone:
+	checkflag ENGINE_BROCK_REMATCH_FIGHT
+	iftrue .PostRematch
+	checkevent EVENT_OPENED_MT_SILVER
+	iffalse .PostInitialFight
+	readvar VAR_WEEKDAY	
+	ifnotequal SATURDAY, .PostInitialFight
+	checktime NITE
+	iffalse .PostInitialFight
+	writetext BrockText_AskRematch
+	yesorno
+	iftrue .BrockRematch
+	writetext BrockText_RematchDeclined
+	waitbutton
+	closetext
+	end
+.PostInitialFight:
 	writetext BrockFightDoneText
+	waitbutton
+	closetext
+	end
+
+.BrockRematch:
+	writetext BrockText_RematchAccepted
+	waitbutton
+	winlosstext BrockText_RematchDefeat, 0
+	readmem wBrockFightCount
+	ifequal 4, .LoadFight4
+	ifequal 3, .LoadFight3
+	ifequal 2, .LoadFight2
+	ifequal 1, .LoadFight1
+
+.LoadFight1:
+	loadtrainer BROCK, BROCK2
+	startbattle
+	reloadmapafterbattle
+	loadmem wBrockFightCount, 2
+	setflag ENGINE_BROCK_REMATCH_FIGHT
+	opentext
+	writetext BrockText_IveLostAgain
+	waitbutton
+	closetext
+	end
+
+.LoadFight2:
+	loadtrainer BROCK, BROCK3
+	startbattle
+	reloadmapafterbattle
+	loadmem wBrockFightCount, 3
+	setflag ENGINE_BROCK_REMATCH_FIGHT
+	opentext
+	writetext BrockText_IveLostAgain
+	waitbutton
+	closetext
+	end
+
+.LoadFight3:
+	loadtrainer BROCK, BROCK4
+	startbattle
+	reloadmapafterbattle
+	loadmem wBrockFightCount, 4
+	setflag ENGINE_BROCK_REMATCH_FIGHT
+	opentext
+	writetext BrockText_IveLostAgain
+	waitbutton
+	closetext
+	end
+
+.LoadFight4:
+	loadtrainer BROCK, BROCK5
+	startbattle
+	reloadmapafterbattle
+	setflag ENGINE_BROCK_REMATCH_FIGHT
+	opentext
+	writetext BrockText_IveLostAgain
+	waitbutton
+	closetext
+	end
+
+.PostRematch:
+	writetext BrockText_IveLostAgain
 	waitbutton
 	closetext
 	end
@@ -142,6 +222,45 @@ BrockFightDoneText:
 	line "I'm going to be-"
 	cont "come a lot strong-"
 	cont "er too."
+	done
+
+BrockText_AskRematch:
+	text "What's up?"
+
+	para "Hey, you came at"
+	line "just the right"
+	cont "time!"
+
+	para "I'm free right now."
+	line "Want to battle me"
+	cont "again?"
+	done
+
+BrockText_RematchAccepted:
+	text "All right, all"
+	line "right!"
+	done
+
+BrockText_RematchDeclined:
+	text "Is that so?"
+	line "Well, I suppose"
+
+	para "you must have a"
+	line "lot of things to"
+	cont "do yourself…"
+	done
+
+BrockText_RematchDefeat:
+	text "Looks like you're"
+	line "the stronger one…"
+	done
+
+BrockText_IveLostAgain:
+	text "I've lost again…"
+
+	para "You aren't advent-"
+	line "uring around for"
+	cont "nothing!"
 	done
 
 CamperJerrySeenText:
