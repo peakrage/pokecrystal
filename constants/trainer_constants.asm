@@ -30,27 +30,67 @@ NUM_NONTRAINER_PHONECONTACTS EQU const_value - 1
 KRIS EQU __trainer_class__
 	trainerclass FALKNER ; 1
 	const FALKNER1
+	const FALKNER2
+	const FALKNER3
+	const FALKNER4
+	const FALKNER5
+	const FALKNER6
 
 	trainerclass WHITNEY ; 2
 	const WHITNEY1
+	const WHITNEY2
+	const WHITNEY3
+	const WHITNEY4
+	const WHITNEY5
+	const WHITNEY6
 
 	trainerclass BUGSY ; 3
 	const BUGSY1
+	const BUGSY2
+	const BUGSY3
+	const BUGSY4
+	const BUGSY5
+	const BUGSY6
 
 	trainerclass MORTY ; 4
 	const MORTY1
+	const MORTY2
+	const MORTY3
+	const MORTY4
+	const MORTY5
+	const MORTY6
 
 	trainerclass PRYCE ; 5
 	const PRYCE1
+	const PRYCE2
+	const PRYCE3
+	const PRYCE4
+	const PRYCE5
+	const PRYCE6
 
 	trainerclass JASMINE ; 6
 	const JASMINE1
+	const JASMINE2
+	const JASMINE3
+	const JASMINE4
+	const JASMINE5
+	const JASMINE6
 
 	trainerclass CHUCK ; 7
 	const CHUCK1
+	const CHUCK2
+	const CHUCK3
+	const CHUCK4
+	const CHUCK5
+	const CHUCK6
 
 	trainerclass CLAIR ; 8
 	const CLAIR1
+	const CLAIR2
+	const CLAIR3
+	const CLAIR4
+	const CLAIR5
+	const CLAIR6
 
 	trainerclass RIVAL1 ; 9
 	const RIVAL1_1_CHIKORITA
