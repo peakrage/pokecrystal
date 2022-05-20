@@ -175,7 +175,6 @@ EngineFlags:
 	engine_flag wDailyRematchFlags, 21 ; wilton
 	engine_flag wDailyRematchFlags, 22 ; parry
 	engine_flag wDailyRematchFlags, 23 ; erin
-	engine_flag wDailyRematchFlags, 24 ; quinn
 
 	engine_flag wDailyPhoneItemFlags, 0 ; beverly has nugget
 	engine_flag wDailyPhoneItemFlags, 1 ; jose has star piece
@@ -212,7 +211,6 @@ EngineFlags:
 	engine_flag wDailyPhoneTimeOfDayFlags, 21 ; wilton
 	engine_flag wDailyPhoneTimeOfDayFlags, 22 ; parry
 	engine_flag wDailyPhoneTimeOfDayFlags, 23 ; erin
-	engine_flag wDailyPhoneTimeOfDayFlags, 24 ; quinn
 
 	engine_flag wPlayerSpriteSetupFlags, PLAYERSPRITESETUP_FEMALE_TO_MALE_F
 
