@@ -60,3 +60,18 @@ BrentRematchText:
 	para "Look, check out my"
 	line "#MON!"
 	done
+
+BrentGiftText:
+	text "This, this! This"
+	line "is yours! Ta-da!"
+	done
+
+BrentPackFullText:
+	text "Whoops!"
+
+	para "You can't carry"
+	line "any more items!"
+
+	para "I'll hold it until"
+	line "next time."
+	done

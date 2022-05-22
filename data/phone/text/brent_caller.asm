@@ -63,6 +63,27 @@ BrentHangUpText:
 	text "So that's it then."
 	done
 
+BrentFoundItemText:
+	text "Hehehe, I picked"
+	line "up something nice!"
+
+	para "You can have it!"
+	line "Why don't you come"
+
+	para "to @"
+	text_ram wStringBuffer5
+	text_start
+	line "and pick it up?"
+	done
+
+BrentHaventPickedUpAnythingText:
+	text "I haven't picked"
+	line "up anything yet."
+
+	para "I'll call you if I"
+	line "find something."
+	done
+
 BrentFatherGossipText:
 	text "Did you know…?"
 	line "BILL's father is"
@@ -160,4 +181,17 @@ BrentReminderText:
 	line "@"
 	text_ram wStringBuffer5
 	text "."
+	done
+
+BrentComePickUpGiftText:
+	text "I have to do my"
+	line "homework, so can"
+
+	para "you come get your"
+	line "gift right away?"
+
+	para "I'm waiting on"
+	line "@"
+	text_ram wStringBuffer5
+	text "!"
 	done
