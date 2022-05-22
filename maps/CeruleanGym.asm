@@ -77,8 +77,92 @@ CeruleanGymMistyScript:
 	playsound SFX_GET_BADGE
 	waitsfx
 	setflag ENGINE_CASCADEBADGE
-.FightDone:
 	writetext MistyFightDoneText
+	waitbutton
+	closetext
+	end
+
+.FightDone:
+	checkflag ENGINE_GYM_REMATCH_M
+	iftrue .PostRematch
+	checkevent EVENT_OPENED_MT_SILVER
+	iffalse .PostInitialFight
+	readvar VAR_WEEKDAY
+	ifnotequal WEDNESDAY, .PostInitialFight
+	checktime MORN
+	iffalse .PostInitialFight
+	writetext MistyText_AskRematch
+	yesorno
+	iftrue .MistyRematch
+	writetext MistyText_RematchDeclined
+	waitbutton
+	closetext
+	end
+.PostInitialFight:
+	writetext MistyFightDoneText
+	waitbutton
+	closetext
+	end
+
+.MistyRematch:
+	writetext MistyText_RematchAccepted
+	waitbutton
+	winlosstext MistyText_RematchDefeat, 0
+	readmem wMistyFightCount
+	ifequal 4, .LoadFight4
+	ifequal 3, .LoadFight3
+	ifequal 2, .LoadFight2
+	ifequal 1, .LoadFight1
+
+.LoadFight1:
+	loadtrainer MISTY, MISTY2
+	startbattle
+	reloadmapafterbattle
+	loadmem wMistyFightCount, 2
+	setflag ENGINE_GYM_REMATCH_M
+	opentext
+	writetext MistyText_YouAreGettingStronger
+	waitbutton
+	closetext
+	end
+
+.LoadFight2:
+	loadtrainer MISTY, MISTY3
+	startbattle
+	reloadmapafterbattle
+	loadmem wMistyFightCount, 3
+	setflag ENGINE_GYM_REMATCH_M
+	opentext
+	writetext MistyText_YouAreGettingStronger
+	waitbutton
+	closetext
+	end
+
+.LoadFight3:
+	loadtrainer MISTY, MISTY4
+	startbattle
+	reloadmapafterbattle
+	loadmem wMistyFightCount, 4
+	setflag ENGINE_GYM_REMATCH_M
+	opentext
+	writetext MistyText_YouAreGettingStronger
+	waitbutton
+	closetext
+	end
+
+.LoadFight4:
+	loadtrainer MISTY, MISTY5
+	startbattle
+	reloadmapafterbattle
+	setflag ENGINE_GYM_REMATCH_M
+	opentext
+	writetext MistyText_YouAreGettingStronger
+	waitbutton
+	closetext
+	end
+
+.PostRematch:
+	writetext MistyText_YouAreGettingStronger
 	waitbutton
 	closetext
 	end
@@ -281,6 +365,41 @@ MistyFightDoneText:
 
 	para "I can battle some"
 	line "skilled trainers."
+	done
+
+MistyText_AskRematch:
+	text "Oh, hi there. I'm"
+	line "free today!"
+
+	para "Let's battle"
+	line "again, okay?"
+	done
+
+MistyText_RematchAccepted:
+	text "Okay! I've heard a"
+	line "lot of good things"
+
+	para "about you since"
+	line "our last battle."
+
+	para "Let me test how"
+	line "good you are!"
+	done
+
+MistyText_RematchDeclined:
+	text "Aw… That makes me"
+	line "sad…"
+	done
+
+MistyText_RematchDefeat:
+	text "Looks like this is"
+	line "it…"
+	done
+
+MistyText_YouAreGettingStronger:
+	text "Wow! You are get-"
+	line "ting stronger by"
+	cont "the battle!"
 	done
 
 SwimmerfDianaSeenText:

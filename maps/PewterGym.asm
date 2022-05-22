@@ -22,7 +22,6 @@ PewterGymBrockScript:
 	reloadmapafterbattle
 	setevent EVENT_BEAT_BROCK
 	setevent EVENT_BEAT_CAMPER_JERRY
-	clearflag ENGINE_BROCK_REMATCH_FIGHT
 	opentext
 	writetext ReceivedBoulderBadgeText
 	playsound SFX_GET_BADGE
@@ -34,7 +33,7 @@ PewterGymBrockScript:
 	end
 
 .FightDone:
-	checkflag ENGINE_BROCK_REMATCH_FIGHT
+	checkflag ENGINE_GYM_REMATCH_N
 	iftrue .PostRematch
 	checkevent EVENT_OPENED_MT_SILVER
 	iffalse .PostInitialFight
@@ -70,7 +69,7 @@ PewterGymBrockScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wBrockFightCount, 2
-	setflag ENGINE_BROCK_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext BrockText_IveLostAgain
 	waitbutton
@@ -82,7 +81,7 @@ PewterGymBrockScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wBrockFightCount, 3
-	setflag ENGINE_BROCK_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext BrockText_IveLostAgain
 	waitbutton
@@ -94,7 +93,7 @@ PewterGymBrockScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wBrockFightCount, 4
-	setflag ENGINE_BROCK_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext BrockText_IveLostAgain
 	waitbutton
@@ -105,7 +104,7 @@ PewterGymBrockScript:
 	loadtrainer BROCK, BROCK5
 	startbattle
 	reloadmapafterbattle
-	setflag ENGINE_BROCK_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext BrockText_IveLostAgain
 	waitbutton
