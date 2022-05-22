@@ -123,9 +123,9 @@ EngineFlags:
 	engine_flag wDailyFlags2, DAILYFLAGS2_MOVE_TUTOR_F
 	engine_flag wDailyFlags2, DAILYFLAGS2_BUENAS_PASSWORD_F
 
-	engine_flag wDailyFlags3, DAILYFLAGS3_BUGSY_REMATCH_FIGHT_F
-	engine_flag wDailyFlags3, DAILYFLAGS3_FALKNER_REMATCH_FIGHT_F
-	engine_flag wDailyFlags3, DAILYFLAGS3_WHITNEY_REMATCH_FIGHT_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_GYM_REMATCH_M_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_GYM_REMATCH_D_F
+	engine_flag wDailyFlags3, DAILYFLAGS3_GYM_REMATCH_N_F
 	engine_flag wDailyFlags3, DAILYFLAGS3_MORTY_REMATCH_FIGHT_F
 	engine_flag wDailyFlags3, DAILYFLAGS3_CHUCK_REMATCH_FIGHT_F
 	engine_flag wDailyFlags3, DAILYFLAGS3_JASMINE_REMATCH_FIGHT_F
@@ -185,7 +185,8 @@ EngineFlags:
 	engine_flag wDailyPhoneItemFlags, 6 ; derek has nugget
 	engine_flag wDailyPhoneItemFlags, 7 ; tully has water stone
 	engine_flag wDailyPhoneItemFlags, 8 ; tiffany has pink bow
-	engine_flag wDailyPhoneItemFlags, 9 ; wilton has item (see EVENT_WILTON_HAS_*** in constants/event_flags.asm)
+	engine_flag wDailyPhoneItemFlags, 9 ; brent has linking cord
+	engine_flag wDailyPhoneItemFlags, 10 ; wilton has item (see EVENT_WILTON_HAS_*** in constants/event_flags.asm)
 
 	engine_flag wDailyPhoneTimeOfDayFlags,  0 ; jack
 	engine_flag wDailyPhoneTimeOfDayFlags,  1 ; huey
