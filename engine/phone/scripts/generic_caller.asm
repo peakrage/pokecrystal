@@ -901,6 +901,7 @@ PhoneScript_FoundItem_Male:
 	ifequal PHONE_SCHOOLBOY_ALAN, .Alan
 	ifequal PHONE_POKEFANM_DEREK, .Derek
 	ifequal PHONE_FISHER_TULLY, .Tully
+	ifequal PHONE_POKEMANIAC_BRENT, .Brent
 	ifequal PHONE_FISHER_WILTON, .Wilton
 
 .Jose:
@@ -921,6 +922,10 @@ PhoneScript_FoundItem_Male:
 
 .Tully:
 	farwritetext TullyFoundItemText
+	end
+
+.Brent:
+	farwritetext BrentFoundItemText
 	end
 
 .Wilton:

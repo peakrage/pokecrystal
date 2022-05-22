@@ -43,6 +43,11 @@ TiffanyHurryScript:
 	promptbutton
 	sjump PhoneScript_HangUpText_Female
 
+BrentFoundItemScript:
+	farwritetext BrentFoundItemText
+	promptbutton
+	sjump PhoneScript_HangUpText_Male
+
 WiltonWantThisScript:
 	farwritetext WiltonWantThisText
 	promptbutton
