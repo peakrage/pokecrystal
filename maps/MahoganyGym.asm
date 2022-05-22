@@ -25,7 +25,6 @@ MahoganyGymPryceScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_PRYCE
-	clearflag ENGINE_PRYCE_REMATCH_FIGHT
 	opentext
 	writetext Text_ReceivedGlacierBadge
 	playsound SFX_GET_BADGE
@@ -52,9 +51,9 @@ MahoganyGymPryceScript:
 	end
 
 .PryceScript_Defeat:
-	checkflag ENGINE_PRYCE_REMATCH_FIGHT
+	checkflag ENGINE_GYM_REMATCH_M
 	iftrue .PostRematch
-	checkevent EVENT_BEAT_CHAMPION_LANCE
+	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .PostInitialFight
 	readvar VAR_WEEKDAY	
 	ifnotequal MONDAY, .PostInitialFight
@@ -90,7 +89,7 @@ MahoganyGymPryceScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wPryceFightCount, 2
-	setflag ENGINE_PRYCE_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_M
 	opentext
 	writetext PryceText_ImpressiveAsAlways
 	waitbutton
@@ -102,7 +101,7 @@ MahoganyGymPryceScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wPryceFightCount, 3
-	setflag ENGINE_PRYCE_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_M
 	opentext
 	writetext PryceText_ImpressiveAsAlways
 	waitbutton
@@ -114,7 +113,7 @@ MahoganyGymPryceScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wPryceFightCount, 4
-	setflag ENGINE_PRYCE_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_M
 	opentext
 	writetext PryceText_ImpressiveAsAlways
 	waitbutton
@@ -126,7 +125,7 @@ MahoganyGymPryceScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wPryceFightCount, 5
-	setflag ENGINE_PRYCE_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_M
 	opentext
 	writetext PryceText_ImpressiveAsAlways
 	waitbutton
@@ -139,7 +138,7 @@ MahoganyGymPryceScript:
 	loadtrainer PRYCE, PRYCE6
 	startbattle
 	reloadmapafterbattle
-	setflag ENGINE_PRYCE_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_M
 	opentext
 	writetext PryceText_ImpressiveAsAlways
 	waitbutton

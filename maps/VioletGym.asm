@@ -22,7 +22,6 @@ VioletGymFalknerScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_FALKNER
-	clearflag ENGINE_FALKNER_REMATCH_FIGHT
 	opentext
 	writetext ReceivedZephyrBadgeText
 	playsound SFX_GET_BADGE
@@ -48,9 +47,9 @@ VioletGymFalknerScript:
 	end
 
 .GotMudSlap:
-	checkflag ENGINE_FALKNER_REMATCH_FIGHT
+	checkflag ENGINE_GYM_REMATCH_M
 	iftrue .PostRematch
-	checkevent EVENT_BEAT_CHAMPION_LANCE
+	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .PostInitialFight
 	readvar VAR_WEEKDAY	
 	ifnotequal SATURDAY, .PostInitialFight
@@ -86,7 +85,7 @@ VioletGymFalknerScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wFalknerFightCount, 2
-	setflag ENGINE_FALKNER_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_M
 	opentext
 	writetext FalknerText_ItsStillALongWay
 	waitbutton
@@ -98,7 +97,7 @@ VioletGymFalknerScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wFalknerFightCount, 3
-	setflag ENGINE_FALKNER_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_M
 	opentext
 	writetext FalknerText_ItsStillALongWay
 	waitbutton
@@ -110,7 +109,7 @@ VioletGymFalknerScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wFalknerFightCount, 4
-	setflag ENGINE_FALKNER_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_M
 	opentext
 	writetext FalknerText_ItsStillALongWay
 	waitbutton
@@ -122,7 +121,7 @@ VioletGymFalknerScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wFalknerFightCount, 5
-	setflag ENGINE_FALKNER_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_M
 	opentext
 	writetext FalknerText_ItsStillALongWay
 	waitbutton
@@ -135,7 +134,7 @@ VioletGymFalknerScript:
 	loadtrainer FALKNER, FALKNER6
 	startbattle
 	reloadmapafterbattle
-	setflag ENGINE_FALKNER_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_M
 	opentext
 	writetext FalknerText_ItsStillALongWay
 	waitbutton

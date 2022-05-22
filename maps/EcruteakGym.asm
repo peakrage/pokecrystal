@@ -34,7 +34,6 @@ EcruteakGymMortyScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_MORTY
-	clearflag ENGINE_MORTY_REMATCH_FIGHT
 	opentext
 	writetext Text_ReceivedFogBadge
 	playsound SFX_GET_BADGE
@@ -63,9 +62,9 @@ EcruteakGymMortyScript:
 	end
 
 .GotShadowBall:
-	checkflag ENGINE_MORTY_REMATCH_FIGHT
+	checkflag ENGINE_GYM_REMATCH_N
 	iftrue .PostRematch
-	checkevent EVENT_BEAT_CHAMPION_LANCE
+	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .PostInitialFight
 	readvar VAR_WEEKDAY	
 	ifnotequal TUESDAY, .PostInitialFight
@@ -101,7 +100,7 @@ EcruteakGymMortyScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wMortyFightCount, 2
-	setflag ENGINE_MORTY_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext MortyText_IveLostAgain
 	waitbutton
@@ -113,7 +112,7 @@ EcruteakGymMortyScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wMortyFightCount, 3
-	setflag ENGINE_MORTY_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext MortyText_IveLostAgain
 	waitbutton
@@ -125,7 +124,7 @@ EcruteakGymMortyScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wMortyFightCount, 4
-	setflag ENGINE_MORTY_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext MortyText_IveLostAgain
 	waitbutton
@@ -137,7 +136,7 @@ EcruteakGymMortyScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wMortyFightCount, 5
-	setflag ENGINE_MORTY_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext MortyText_IveLostAgain
 	waitbutton
@@ -150,7 +149,7 @@ EcruteakGymMortyScript:
 	loadtrainer MORTY, MORTY6
 	startbattle
 	reloadmapafterbattle
-	setflag ENGINE_MORTY_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext MortyText_IveLostAgain
 	waitbutton

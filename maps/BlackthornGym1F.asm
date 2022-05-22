@@ -41,7 +41,6 @@ BlackthornGymClairScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CLAIR
-	clearflag ENGINE_CLAIR_REMATCH_FIGHT
 	opentext
 	writetext ClairText_GoToDragonsDen
 	waitbutton
@@ -86,9 +85,9 @@ BlackthornGymClairScript:
 	end
 
 .GotTM24:
-	checkflag ENGINE_CLAIR_REMATCH_FIGHT
+	checkflag ENGINE_GYM_REMATCH_N
 	iftrue .PostRematch
-	checkevent EVENT_BEAT_CHAMPION_LANCE
+	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .PostInitialFight
 	readvar VAR_WEEKDAY	
 	ifnotequal FRIDAY, .PostInitialFight
@@ -123,7 +122,7 @@ BlackthornGymClairScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wClairFightCount, 2
-	setflag ENGINE_CLAIR_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext ClairText_WayToGo
 	waitbutton
@@ -135,7 +134,7 @@ BlackthornGymClairScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wClairFightCount, 3
-	setflag ENGINE_CLAIR_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext ClairText_WayToGo
 	waitbutton
@@ -147,7 +146,7 @@ BlackthornGymClairScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wClairFightCount, 4
-	setflag ENGINE_CLAIR_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext ClairText_WayToGo
 	waitbutton
@@ -159,7 +158,7 @@ BlackthornGymClairScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wClairFightCount, 5
-	setflag ENGINE_CLAIR_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext ClairText_WayToGo
 	waitbutton
@@ -172,7 +171,7 @@ BlackthornGymClairScript:
 	loadtrainer CLAIR, CLAIR6
 	startbattle
 	reloadmapafterbattle
-	setflag ENGINE_CLAIR_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext ClairText_WayToGo
 	waitbutton

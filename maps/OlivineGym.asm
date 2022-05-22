@@ -20,7 +20,6 @@ OlivineGymJasmineScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_JASMINE
-	clearflag ENGINE_JASMINE_REMATCH_FIGHT
 	opentext
 	writetext Text_ReceivedMineralBadge
 	playsound SFX_GET_BADGE
@@ -42,9 +41,9 @@ OlivineGymJasmineScript:
 	end
 
 .GotIronTail:
-	checkflag ENGINE_JASMINE_REMATCH_FIGHT
+	checkflag ENGINE_GYM_REMATCH_D
 	iftrue .PostRematch
-	checkevent EVENT_BEAT_CHAMPION_LANCE
+	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .PostInitialFight
 	readvar VAR_WEEKDAY	
 	ifnotequal WEDNESDAY, .PostInitialFight
@@ -80,7 +79,7 @@ OlivineGymJasmineScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wJasmineFightCount, 2
-	setflag ENGINE_JASMINE_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_D
 	opentext
 	writetext JasmineText_TrueToYourReputation
 	waitbutton
@@ -92,7 +91,7 @@ OlivineGymJasmineScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wJasmineFightCount, 3
-	setflag ENGINE_JASMINE_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_D
 	opentext
 	writetext JasmineText_TrueToYourReputation
 	waitbutton
@@ -104,7 +103,7 @@ OlivineGymJasmineScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wJasmineFightCount, 4
-	setflag ENGINE_JASMINE_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_D
 	opentext
 	writetext JasmineText_TrueToYourReputation
 	waitbutton
@@ -116,7 +115,7 @@ OlivineGymJasmineScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wJasmineFightCount, 4
-	setflag ENGINE_JASMINE_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_D
 	opentext
 	writetext JasmineText_TrueToYourReputation
 	waitbutton
@@ -130,7 +129,7 @@ OlivineGymJasmineScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wJasmineFightCount, 4
-	setflag ENGINE_JASMINE_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_D
 	opentext
 	writetext JasmineText_TrueToYourReputation
 	waitbutton

@@ -42,7 +42,6 @@ CianwoodGymChuckScript:
 	startbattle
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CHUCK
-	clearflag ENGINE_CHUCK_REMATCH_FIGHT
 	opentext
 	writetext GetStormBadgeText
 	playsound SFX_GET_BADGE
@@ -68,9 +67,9 @@ CianwoodGymChuckScript:
 	end
 
 .GotDynamicPunch:
-	checkflag ENGINE_CHUCK_REMATCH_FIGHT
+	checkflag ENGINE_GYM_REMATCH_N
 	iftrue .PostRematch
-	checkevent EVENT_BEAT_CHAMPION_LANCE
+	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .PostInitialFight
 	readvar VAR_WEEKDAY	
 	ifnotequal WEDNESDAY, .PostInitialFight
@@ -106,7 +105,7 @@ CianwoodGymChuckScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wChuckFightCount, 2
-	setflag ENGINE_CHUCK_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext ChuckText_ABattleWithYou
 	waitbutton
@@ -118,7 +117,7 @@ CianwoodGymChuckScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wChuckFightCount, 3
-	setflag ENGINE_CHUCK_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext ChuckText_ABattleWithYou
 	waitbutton
@@ -130,7 +129,7 @@ CianwoodGymChuckScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wChuckFightCount, 4
-	setflag ENGINE_CHUCK_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext ChuckText_ABattleWithYou
 	waitbutton
@@ -142,7 +141,7 @@ CianwoodGymChuckScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wChuckFightCount, 5
-	setflag ENGINE_CHUCK_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext ChuckText_ABattleWithYou
 	waitbutton
@@ -155,7 +154,7 @@ CianwoodGymChuckScript:
 	loadtrainer CHUCK, CHUCK5
 	startbattle
 	reloadmapafterbattle
-	setflag ENGINE_CHUCK_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_N
 	opentext
 	writetext ChuckText_ABattleWithYou
 	waitbutton

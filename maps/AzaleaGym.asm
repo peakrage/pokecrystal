@@ -24,9 +24,7 @@ AzaleaGymBugsyScript:
 	loadtrainer BUGSY, BUGSY1
 	startbattle
 	reloadmapafterbattle
-	loadmem wBugsyFightCount, 1
 	setevent EVENT_BEAT_BUGSY
-	clearflag ENGINE_BUGSY_REMATCH_FIGHT
 	opentext
 	writetext Text_ReceivedHiveBadge
 	playsound SFX_GET_BADGE
@@ -52,9 +50,9 @@ AzaleaGymBugsyScript:
 	end
 
 .GotFuryCutter:
-	checkflag ENGINE_BUGSY_REMATCH_FIGHT
+	checkflag ENGINE_GYM_REMATCH_D
 	iftrue .PostRematch
-	checkevent EVENT_BEAT_CHAMPION_LANCE
+	checkevent EVENT_BEAT_ELITE_FOUR
 	iffalse .PostInitialFight
 	readvar VAR_WEEKDAY	
 	ifnotequal THURSDAY, .PostInitialFight
@@ -90,7 +88,7 @@ AzaleaGymBugsyScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wBugsyFightCount, 2
-	setflag ENGINE_BUGSY_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_D
 	opentext
 	writetext BugsyText_YouMustHaveStudied
 	waitbutton
@@ -102,7 +100,7 @@ AzaleaGymBugsyScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wBugsyFightCount, 3
-	setflag ENGINE_BUGSY_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_D
 	opentext
 	writetext BugsyText_YouMustHaveStudied
 	waitbutton
@@ -114,7 +112,7 @@ AzaleaGymBugsyScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wBugsyFightCount, 4
-	setflag ENGINE_BUGSY_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_D
 	opentext
 	writetext BugsyText_YouMustHaveStudied
 	waitbutton
@@ -126,7 +124,7 @@ AzaleaGymBugsyScript:
 	startbattle
 	reloadmapafterbattle
 	loadmem wBugsyFightCount, 5
-	setflag ENGINE_BUGSY_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_D
 	opentext
 	writetext BugsyText_YouMustHaveStudied
 	waitbutton
@@ -139,7 +137,7 @@ AzaleaGymBugsyScript:
 	loadtrainer BUGSY, BUGSY6
 	startbattle
 	reloadmapafterbattle
-	setflag ENGINE_BUGSY_REMATCH_FIGHT
+	setflag ENGINE_GYM_REMATCH_D
 	opentext
 	writetext BugsyText_YouMustHaveStudied
 	waitbutton
